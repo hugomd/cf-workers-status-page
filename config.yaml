@@ -1,6 +1,6 @@
 settings:
   title: 'Status Page'
-  url: 'https://status-page.eidam.dev' # used for Slack messages
+  url: 'https://status.hugo.md' # used for Slack messages
   logo: logo-192x192.png # image in ./public/ folder
   daysInHistogram: 90 # number of days you want to display in histogram
   collectResponseTimes: true # collects avg response times from CRON locations
@@ -15,23 +15,29 @@ settings:
   dayInHistogramNotOperational: ' incident(s)' # xx incident(s) recorded
 
 monitors:
-  - id: workers-cloudflare-com # unique identifier
-    name: workers.cloudflare.com
-    description: 'You write code. They handle the rest.' # default=empty
-    url: 'https://workers.cloudflare.com/' # URL to fetch
+  - id: hugo-md # unique identifier
+    name: hugo.md
+    description: 'Personal blog' # default=empty
+    url: 'https://hugo.md/' # URL to fetch
     method: GET # default=GET
     expectStatus: 200 # operational status, default=200
     followRedirect: false # should fetch follow redirects, default=false
 
-  - id: www-cloudflare-com
-    name: www.cloudflare.com
-    description: 'Built for anything connected to the Internet.'
-    url: 'https://www.cloudflare.com'
+  - id: sost-ovh
+    name: sost.ovh
+    description: 'Homelab'
+    url: 'https://sost.ovh'
+    method: GET
+    expectStatus: 404
+
+  - id: soykaf-org
+    name: Pleroma
+    url: 'https://soykaf.org/api/v1/pleroma/healthcheck'
     method: GET
     expectStatus: 200
-
-  - id: blog-cloudflare-com
-    name: The Cloudflare Blog
-    url: 'https://blog.cloudflare.com/'
+  
+  - id: soykaf-org
+    name: Mastodon
+    url: 'https://melb.social/health'
     method: GET
     expectStatus: 200
