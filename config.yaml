@@ -16,16 +16,14 @@ settings:
 
 monitors:
   - id: hugo-md # unique identifier
-    name: hugo.md
-    description: 'Personal blog' # default=empty
+    name: Hugo's Blog
     url: 'https://hugo.md/' # URL to fetch
     method: GET # default=GET
     expectStatus: 200 # operational status, default=200
     followRedirect: false # should fetch follow redirects, default=false
 
   - id: sost-ovh
-    name: sost.ovh
-    description: 'Homelab'
+    name: Homelab
     url: 'https://sost.ovh'
     method: GET
     expectStatus: 404
