@@ -15,13 +15,6 @@ settings:
   dayInHistogramNotOperational: ' incident(s)' # xx incident(s) recorded
 
 monitors:
-  - id: hugo-md # unique identifier
-    name: Hugo's Blog
-    url: 'https://hugo.md/' # URL to fetch
-    method: GET # default=GET
-    expectStatus: 200 # operational status, default=200
-    followRedirect: false # should fetch follow redirects, default=false
-
   - id: sost-ovh
     name: Homelab
     url: 'https://sost.ovh'
